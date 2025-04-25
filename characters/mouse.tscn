@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cjmua3b7us45v"]
+
+[node name="Mouse" type="CharacterBody2D"]

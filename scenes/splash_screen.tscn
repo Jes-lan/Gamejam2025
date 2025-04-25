@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://xa255ylr4i67"]
 
 [ext_resource type="Script" uid="uid://gktd852o4k7b" path="res://scripts/splash_screen.gd" id="1_hsxvm"]
-[ext_resource type="VideoStream" uid="uid://btulwy41uuc6a" path="res://output_quality_video - Kopya.ogv" id="1_n4g2v"]
+[ext_resource type="VideoStream" uid="uid://1c8thupfph8s" path="res://assets/videos/output_quality_video - Kopya.ogv" id="2_hsxvm"]
 
 [node name="SplashScreen" type="Node2D"]
 script = ExtResource("1_hsxvm")
@@ -10,7 +10,7 @@ script = ExtResource("1_hsxvm")
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.5, 0.5)
-stream = ExtResource("1_n4g2v")
+stream = ExtResource("2_hsxvm")
 autoplay = true
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

@@ -15,4 +15,6 @@ texture = ExtResource("1_dnjla")
 shape = SubResource("CircleShape2D_3eadt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -70)
 zoom = Vector2(1.5, 1.5)
+drag_vertical_enabled = true

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://xa255ylr4i67"]
+
+[ext_resource type="VideoStream" uid="uid://btulwy41uuc6a" path="res://output_quality_video - Kopya.ogv" id="1_n4g2v"]
+
+[node name="SplashScreen" type="Node2D"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+stream = ExtResource("1_n4g2v")
+autoplay = true

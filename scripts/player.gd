@@ -6,6 +6,12 @@ var JUMP_VELOCITY = -400.0
 var HEALTH = 3
 
 func movement(delta: float) -> void:
+	if velocity.y > 0:
+		$Camera2D.offset.y = lerp($Camera2D.offset.y, -20.0, 0.1)
+	else:
+		$Camera2D.offset.y = lerp($Camera2D.offset.y, -60.0, 0.1)
+
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -24,6 +30,10 @@ func movement(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
+		if direction > 0:
+			$Camera2D.offset.x = lerp($Camera2D.offset.x, 8.0, 0.1)
+		elif direction < 0:
+			$Camera2D.offset.x = lerp($Camera2D.offset.x, -20.0, 0.1)
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -49,3 +59,8 @@ func _physics_process(delta: float) -> void:
 		
 	# Move the character.
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.has_method("hurt"):
+		body.hurt()

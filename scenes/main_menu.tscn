@@ -1,14 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://cf0fdnubdjbm8"]
+[gd_scene load_steps=3 format=3 uid="uid://cf0fdnubdjbm8"]
 
 [ext_resource type="Script" uid="uid://doai0rt27j0qk" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://c8uo71aytxplj" path="res://assets/Nature Landscapes Free Pixel Art/nature_3/orig.png" id="2_ekxnf"]
 
 [node name="Main_menu" type="Node2D"]
 script = ExtResource("1_l6cm7")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0, 0, 0, 1)
+texture = ExtResource("2_ekxnf")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 672.0

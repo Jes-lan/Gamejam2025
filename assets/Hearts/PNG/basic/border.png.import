@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfw6j4f8sb8na"
-path="res://.godot/imported/Example@0.5x.png-92ff35d5a074a205793705c7a56cf955.ctex"
+uid="uid://8qxv8sgtrwex"
+path="res://.godot/imported/border.png-356163235a98cf033fa4ddaee08319bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/png@0.5x/Load/Example@0.5x.png"
-dest_files=["res://.godot/imported/Example@0.5x.png-92ff35d5a074a205793705c7a56cf955.ctex"]
+source_file="res://assets/Hearts/PNG/basic/border.png"
+dest_files=["res://.godot/imported/border.png-356163235a98cf033fa4ddaee08319bb.ctex"]
 
 [params]
 

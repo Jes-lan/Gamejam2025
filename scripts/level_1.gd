@@ -3,7 +3,6 @@ extends Node2D
 @onready var health_bar = $CanvasLayer/HealthBar
 
 func _ready():
-	print(health_bar)
-
+	pass
 func _process(delta):
 	pass

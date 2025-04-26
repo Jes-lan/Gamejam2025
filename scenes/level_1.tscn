@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c885xprttnups" path="res://assets/Mondstadt Tileset Platform - Basic/Mondstadt Background Wallpaper/windrise-background-4k.png" id="4_5xbjy"]
 [ext_resource type="Texture2D" uid="uid://cos5rdgg2v4np" path="res://assets/Hearts/PNG/basic/heart.png" id="4_e3sih"]
 [ext_resource type="Texture2D" uid="uid://crmvjay4mldjp" path="res://assets/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/png@0.5x/Load/Magazine/Dummy@0.5x.png" id="5_2y5yt"]
-[ext_resource type="Texture2D" uid="uid://6krqutk6mixu" path="res://assets/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/png@0.5x/Load/Example@0.5x - Kopya.png" id="6_e3sih"]
+[ext_resource type="Texture2D" uid="uid://band8gdx1ahlw" path="res://assets/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/png@0.5x/Load/Bullet@0.5x.png" id="7_2os1m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fcfvj"]
 texture = ExtResource("4_4nkto")
@@ -993,26 +993,74 @@ offset_right = 117.0
 offset_bottom = 121.0
 scale = Vector2(5.5, 5.5)
 max_value = 3.0
-value = 1.0
 texture_under = ExtResource("2_pa8r4")
 texture_progress = ExtResource("4_e3sih")
 
 [node name="Magazine" type="TextureProgressBar" parent="CanvasLayer"]
-offset_left = 64.0
-offset_top = 24.0
-offset_right = 424.0
-offset_bottom = 104.0
+offset_left = 72.0
+offset_top = 16.0
+offset_right = 274.0
+offset_bottom = 67.0
 scale = Vector2(1.42, 1.42)
-max_value = 179.0
-value = 179.0
+max_value = 202.0
+value = 66.0
 texture_under = ExtResource("5_2y5yt")
-texture_progress = ExtResource("6_e3sih")
+
+[node name="Bullet_0_5x" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(106.92, 50.72)
+scale = Vector2(1.04, 1.04)
+texture = ExtResource("7_2os1m")
+
+[node name="Bullet_0_5x2" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(130.92, 50.72)
+scale = Vector2(1.04, 1.04)
+texture = ExtResource("7_2os1m")
+
+[node name="Bullet_0_5x3" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(154.92, 50.72)
+scale = Vector2(1.04, 1.04)
+texture = ExtResource("7_2os1m")
+
+[node name="Bullet_0_5x4" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(178.92, 50.72)
+scale = Vector2(1.04, 1.04)
+texture = ExtResource("7_2os1m")
+
+[node name="Bullet_0_5x5" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(202.92, 50.72)
+scale = Vector2(1.04, 1.04)
+texture = ExtResource("7_2os1m")
+
+[node name="Bullet_0_5x6" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(226.92, 50.72)
+scale = Vector2(1.04, 1.04)
+texture = ExtResource("7_2os1m")
+
+[node name="Bullet_0_5x7" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(250.92, 50.72)
+scale = Vector2(1.04, 1.04)
+texture = ExtResource("7_2os1m")
+
+[node name="Bullet_0_5x8" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(274.92, 50.72)
+scale = Vector2(1.04, 1.04)
+texture = ExtResource("7_2os1m")
+
+[node name="Bullet_0_5x9" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(298.92, 50.72)
+scale = Vector2(1.04, 1.04)
+texture = ExtResource("7_2os1m")
+
+[node name="Bullet_0_5x10" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(322.92, 50.72)
+scale = Vector2(1.04, 1.04)
+texture = ExtResource("7_2os1m")
 
 [node name="Player" parent="." instance=ExtResource("1_014kd")]
 position = Vector2(544, 232)
 
 [node name="Frog" parent="." instance=ExtResource("2_bswci")]
-position = Vector2(1192, 214)
+position = Vector2(1032, 544)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-464, -152)

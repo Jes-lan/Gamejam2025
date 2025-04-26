@@ -1,18 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://dkxj85k7t76i7"]
 
 [ext_resource type="Script" uid="uid://cl60b57xyp2bt" path="res://scripts/player.gd" id="1_3eadt"]
-[ext_resource type="Texture2D" uid="uid://01khadhgofvn" path="res://icon.svg" id="1_dnjla"]
+[ext_resource type="Texture2D" uid="uid://c15sgcnvhxgxs" path="res://assets/turp111.png" id="2_3eadt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3eadt"]
+radius = 18.3007
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_3eadt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_dnjla")
+texture = ExtResource("2_3eadt")
+flip_h = true
 
 [node name="HurtBox" type="CollisionShape2D" parent="."]
+texture_filter = 2
+position = Vector2(-64, 48)
 scale = Vector2(6.12, 6.12)
 shape = SubResource("CircleShape2D_3eadt")
 

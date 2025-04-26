@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 var SPEED = 300.0
-var JUMP_VELOCITY = -400.0
+var JUMP_VELOCITY = -600.0
 
 
 func _ready():
@@ -35,15 +35,17 @@ func movement(delta: float) -> void:
 	if direction:
 		if direction > 0:
 			$Camera2D.offset.x = lerp($Camera2D.offset.x, 8.0, 0.1)
+			$Sprite2D.flip_h = true
 		elif direction < 0:
 			$Camera2D.offset.x = lerp($Camera2D.offset.x, -20.0, 0.1)
+			$Sprite2D.flip_h = false
+			
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 
 func _attack():
-	print(Global.currentBullet)
 	if Global.currentBullet >= 0:
 		# Attack logic here
 		if Input.is_action_just_pressed("attack"):
@@ -53,7 +55,6 @@ func _attack():
 			if Global.currentBullet == -1:
 				$reloadTimer.start()
 func reload():
-	print("Reloading")
 	Global.currentBullet = 9
 	Global.magazine[0].visible = true
 	Global.magazine[1].visible = true
@@ -71,7 +72,6 @@ func hurt():
 	Global.HEALTH -= 2
 	$"../CanvasLayer/HealthBar".value = Global.HEALTH
 	if Global.HEALTH <= 0:
-		print("Game Over")
 		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 
 func _physics_process(delta: float) -> void:

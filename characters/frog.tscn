@@ -15,5 +15,4 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_yoiyo")
 
 [node name="HurtBox" type="CollisionShape2D" parent="."]
-position = Vector2(0, -8)
 shape = SubResource("CapsuleShape2D_jng8l")

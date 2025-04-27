@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://cotkolk138i7h"]
+
+[ext_resource type="Script" uid="uid://ctxcd7q0gpcfy" path="res://scripts/ladybug.gd" id="1_sjapo"]
+[ext_resource type="Texture2D" uid="uid://cf0ydc8lxl3qc" path="res://characters/ugur boceği 2.png" id="1_wx2qt"]
+[ext_resource type="Texture2D" uid="uid://c58heivftq5ik" path="res://characters/ugur boceği 3.png" id="2_sjapo"]
+[ext_resource type="PackedScene" uid="uid://dqj4v3hs31e34" path="res://scenes/bullet.tscn" id="2_tyl5h"]
+[ext_resource type="Texture2D" uid="uid://n6ntspq5nhn0" path="res://characters/uğur böceği 1.png" id="4_wd2i0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a2j61"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_wd2i0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_wx2qt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sjapo")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c5ckk"]
+radius = 704.182
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sjapo"]
+radius = 227.305
+
+[node name="Ladybug" type="CharacterBody2D"]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_sjapo")
+bullet_scene = ExtResource("2_tyl5h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a2j61")
+animation = &"new_animation"
+frame_progress = 0.135007
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.802862, 0.61823)
+shape = SubResource("CircleShape2D_c5ckk")
+
+[node name="BulletTimer" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1, 0.71)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(18.3063, 26.8464)
+shape = SubResource("CircleShape2D_sjapo")
+
+[connection signal="timeout" from="BulletTimer" to="." method="_on_bullet_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

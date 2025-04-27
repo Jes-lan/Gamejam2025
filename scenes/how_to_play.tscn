@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://ychb5u1hrwcv"]
+
+[ext_resource type="Texture2D" uid="uid://bwg34swb874eb" path="res://assets/Nature Landscapes Free Pixel Art/nature_2/origbig.png" id="1_d4i75"]
+[ext_resource type="Texture2D" uid="uid://b5e1wh4j8f5nl" path="res://assets/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/png/Buttons/Square/ArrowLeft-Bold/Default.png" id="2_30apa"]
+[ext_resource type="Texture2D" uid="uid://c1telttob6jxr" path="res://assets/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/png/Buttons/Square/ArrowLeft-Bold/Hover.png" id="3_xkrkv"]
+[ext_resource type="FontFile" uid="uid://1hvo1ptushjb" path="res://assets/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/png/Buttons/Square/ArrowLeft-Bold/MinecraftRegular-Bmg3.otf" id="4_xkrkv"]
+
+[sub_resource type="GDScript" id="GDScript_d4i75"]
+resource_name = "howtoplay"
+script/source = "extends Control
+
+
+func _on_texture_button_pressed() -> void:
+	SceneTransition.change_scene_to_file(\"res://scenes/main_menu.tscn\")
+"
+
+[node name="How to play" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_d4i75")
+
+[node name="Origbig" type="Sprite2D" parent="."]
+position = Vector2(960, 541)
+scale = Vector2(3.33333, 3.32716)
+texture = ExtResource("1_d4i75")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 104.0
+offset_bottom = 99.0
+texture_normal = ExtResource("2_30apa")
+texture_hover = ExtResource("3_xkrkv")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 184.0
+offset_right = 359.0
+offset_bottom = 207.0
+scale = Vector2(5, 5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_xkrkv")
+text = "W A S D - Move"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 352.0
+offset_right = 355.0
+offset_bottom = 375.0
+scale = Vector2(5, 5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_xkrkv")
+text = "Shift - Roll"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 512.0
+offset_right = 374.0
+offset_bottom = 535.0
+scale = Vector2(5, 5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_xkrkv")
+text = "Left Click - Attack"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 968.0
+offset_top = 352.0
+offset_right = 1102.0
+offset_bottom = 375.0
+scale = Vector2(5, 5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_xkrkv")
+text = "Space - Jump"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 688.0
+offset_right = 374.0
+offset_bottom = 711.0
+scale = Vector2(5, 5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_xkrkv")
+text = "Water = Heal"
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

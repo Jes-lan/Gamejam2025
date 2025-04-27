@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://5ko2rywpmsib"]
+[gd_scene load_steps=4 format=3 uid="uid://5ko2rywpmsib"]
 
 [ext_resource type="Script" uid="uid://bjbnyswk1svj6" path="res://scripts/global.gd" id="1_4pk28"]
+[ext_resource type="AudioStream" uid="uid://dcmwu022ia3l7" path="res://assets/sfx/A Well Earned Celebration - Frieren Beyond Journeys End OST disc 1 - 4.mp3" id="2_opebo"]
+[ext_resource type="AudioStream" uid="uid://dmi57sogam0bx" path="res://assets/sfx/Mount & Blade Soundtrack - Swadian Hall ( Kalimba Cover ).mp3" id="3_m3l3d"]
 
 [node name="Global" type="Node"]
 script = ExtResource("1_4pk28")
+
+[node name="AWellEarnedCelebration-FrierenBeyondJourneysEndOstDisc1-4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_opebo")
+
+[node name="Mount&BladeSoundtrack-SwadianHall(KalimbaCover)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_m3l3d")
+autoplay = true
+parameters/looping = true

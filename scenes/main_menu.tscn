@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cf0fdnubdjbm8"]
+[gd_scene load_steps=8 format=3 uid="uid://cf0fdnubdjbm8"]
 
 [ext_resource type="Script" uid="uid://doai0rt27j0qk" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://c8uo71aytxplj" path="res://assets/Nature Landscapes Free Pixel Art/nature_3/orig.png" id="2_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://dlxyge5gi2fs0" path="res://assets/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/png/Button/Rect/Default.png" id="3_bqqt6"]
-[ext_resource type="Texture2D" uid="uid://dq44svekpd14r" path="res://assets/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/png/Buttons/Rect/PlayText/Default.png" id="4_8ln24"]
-[ext_resource type="FontFile" uid="uid://16f1g3gcpdxy" path="res://assets/Fredoka_SemiCondensed-Medium.ttf" id="4_rtw2f"]
-[ext_resource type="Texture2D" uid="uid://b4v5u2qvh78w6" path="res://assets/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/png/Buttons/Rect/PlayText/Hover.png" id="5_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://sp3wkfger5fw" path="res://assets/oyna 1/oyna 1-1.png" id="3_oa1go"]
+[ext_resource type="Texture2D" uid="uid://bguoqwakq0nhb" path="res://assets/çıkış/çıkış-1.png" id="4_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://fjf3kjwpe1m1" path="res://assets/ayarlar/ayarlar-1.png" id="5_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://h45o16dcuf1d" path="res://assets/bilgilendirme/bilgilendirme-1.png" id="6_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://qpuqs54nqsvt" path="res://assets/turp çorbası/turp çorbası-1.png" id="7_lgwnu"]
 
 [node name="Main_menu" type="Node2D"]
 script = ExtResource("1_l6cm7")
@@ -15,29 +16,43 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_ekxnf")
 
-[node name="Default" type="Sprite2D" parent="."]
-position = Vector2(920, 288)
-scale = Vector2(4, 2.27)
-texture = ExtResource("3_bqqt6")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Default"]
-texture_filter = 2
-offset_left = -40.0
-offset_top = -25.1101
-offset_right = 64.0
-offset_bottom = 1.88987
-scale = Vector2(1, 1.7)
-theme_override_fonts/normal_font = ExtResource("4_rtw2f")
-text = "Turnip Soup
-"
-
 [node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 760.0
-offset_top = 688.0
-offset_right = 920.0
-offset_bottom = 771.0
-scale = Vector2(2, 2)
-texture_normal = ExtResource("4_8ln24")
-texture_hover = ExtResource("5_rtw2f")
+offset_left = 320.0
+offset_top = 720.0
+offset_right = 1273.0
+offset_bottom = 1016.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("3_oa1go")
+
+[node name="TextureButton4" type="TextureButton" parent="."]
+offset_left = 1064.0
+offset_top = 728.0
+offset_right = 2017.0
+offset_bottom = 1024.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("4_tbmy8")
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = 1768.0
+offset_top = 24.0
+offset_right = 2213.0
+offset_bottom = 469.0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("5_jk1qb")
+
+[node name="TextureButton3" type="TextureButton" parent="."]
+offset_left = 1768.0
+offset_top = 928.0
+offset_right = 2213.0
+offset_bottom = 1373.0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("6_5dd4i")
+
+[node name="TurpÇorbası-1" type="Sprite2D" parent="."]
+position = Vector2(936, 264)
+texture = ExtResource("7_lgwnu")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureButton4" to="." method="_on_texture_button_4_pressed"]
+[connection signal="button_down" from="TextureButton2" to="." method="_on_texture_button_2_button_down"]
+[connection signal="pressed" from="TextureButton3" to="." method="_on_texture_button_3_pressed"]

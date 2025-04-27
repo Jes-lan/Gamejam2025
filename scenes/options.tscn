@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckmi7yauegj1u"]
+
+[ext_resource type="Texture2D" uid="uid://chgay4d5l8a3r" path="res://assets/Nature Landscapes Free Pixel Art/nature_1/origbig.png" id="1_c2u1v"]
+[ext_resource type="Texture2D" uid="uid://v8rl4ptcvou3" path="res://assets/ok.png" id="2_yjkok"]
+[ext_resource type="Texture2D" uid="uid://cjc0l2qvavmmg" path="res://assets/border.png" id="3_2iy26"]
+[ext_resource type="Texture2D" uid="uid://cii7e7l1npabp" path="res://assets/music.png" id="4_kv8mn"]
+[ext_resource type="Texture2D" uid="uid://b5e1wh4j8f5nl" path="res://assets/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/png/Buttons/Square/ArrowLeft-Bold/Default.png" id="5_e6vpq"]
+[ext_resource type="Texture2D" uid="uid://c1telttob6jxr" path="res://assets/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/png/Buttons/Square/ArrowLeft-Bold/Hover.png" id="6_o7i7e"]
+
+[sub_resource type="GDScript" id="GDScript_e6vpq"]
+resource_name = "options"
+script/source = "extends Control
+
+func _on_texture_button_2_pressed() -> void:
+	SceneTransition.change_scene_to_file(\"res://scenes/main_menu.tscn\")
+
+
+func _on_texture_button_toggled(toggled_on: bool) -> void:
+	Global.audio.stop()
+"
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_e6vpq")
+
+[node name="Origbig" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.833333, 0.833333)
+texture = ExtResource("1_c2u1v")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 240.0
+offset_right = 376.0
+offset_bottom = 304.0
+scale = Vector2(3, 3)
+toggle_mode = true
+texture_pressed = ExtResource("2_yjkok")
+
+[node name="Border" type="Sprite2D" parent="TextureButton"]
+position = Vector2(32, 32)
+texture = ExtResource("3_2iy26")
+
+[node name="Music" type="Sprite2D" parent="TextureButton"]
+position = Vector2(165.333, 32)
+scale = Vector2(1.66667, 1.66667)
+texture = ExtResource("4_kv8mn")
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 120.0
+offset_bottom = 115.0
+texture_normal = ExtResource("5_e6vpq")
+texture_hover = ExtResource("6_o7i7e")
+
+[connection signal="toggled" from="TextureButton" to="." method="_on_texture_button_toggled"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

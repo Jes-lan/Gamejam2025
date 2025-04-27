@@ -1,23 +1,156 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkxj85k7t76i7"]
+[gd_scene load_steps=22 format=3 uid="uid://dkxj85k7t76i7"]
 
 [ext_resource type="Script" uid="uid://cl60b57xyp2bt" path="res://scripts/player.gd" id="1_3eadt"]
-[ext_resource type="Texture2D" uid="uid://c15sgcnvhxgxs" path="res://assets/turp111.png" id="2_3eadt"]
+[ext_resource type="Shader" uid="uid://1y7ls5w1vyob" path="res://characters/player.gdshader" id="2_6t23p"]
+[ext_resource type="Texture2D" uid="uid://q8mjtian6rom" path="res://assets/koşma2.png" id="3_n8jd0"]
+[ext_resource type="Texture2D" uid="uid://te670upvterw" path="res://assets/ateş.png" id="4_q605b"]
+[ext_resource type="Texture2D" uid="uid://1diot0k087v3" path="res://assets/koşma.png" id="5_eho78"]
+[ext_resource type="Texture2D" uid="uid://uux18bg8yhsi" path="res://assets/takla2.png" id="6_8sqrr"]
+[ext_resource type="Texture2D" uid="uid://bu74ydesvbofd" path="res://assets/takla 1.png" id="7_6rrl0"]
+[ext_resource type="Texture2D" uid="uid://dbqonpvhe8i5h" path="res://assets/takla 3.png" id="8_eus45"]
+[ext_resource type="Texture2D" uid="uid://cnhrg4r8q8wsd" path="res://assets/Firebolt SpriteSheet.png" id="9_n8jd0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n8jd0"]
+shader = ExtResource("2_6t23p")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_width = 5.0
+shader_parameter/use_screen_uv = false
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dnjla"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_n8jd0")
+}, {
+"duration": 3.0,
+"texture": ExtResource("4_q605b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n8jd0")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("3_n8jd0")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_eho78")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_8sqrr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6rrl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_eus45")
+}],
+"loop": true,
+"name": &"rolling",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3eadt"]
-radius = 20.2423
+radius = 19.4081
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j31ep"]
+size = Vector2(462.5, 91.6667)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8jd0"]
+atlas = ExtResource("9_n8jd0")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q605b"]
+atlas = ExtResource("9_n8jd0")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eho78"]
+atlas = ExtResource("9_n8jd0")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sqrr"]
+atlas = ExtResource("9_n8jd0")
+region = Rect2(384, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rrl0"]
+atlas = ExtResource("9_n8jd0")
+region = Rect2(432, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eus45"]
+atlas = ExtResource("9_n8jd0")
+region = Rect2(480, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcag3"]
+atlas = ExtResource("9_n8jd0")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q605b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8jd0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q605b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eho78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sqrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rrl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eus45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcag3")
+}],
+"loop": false,
+"name": &"blast",
+"speed": 7.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.36, 0.36)
+slide_on_ceiling = false
 script = ExtResource("1_3eadt")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_3eadt")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_n8jd0")
+position = Vector2(2.6491e-06, 2.6491e-06)
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_dnjla")
+animation = &"attack"
+autoplay = "idle"
+frame = 2
+frame_progress = 1.0
 flip_h = true
 
 [node name="HurtBox" type="CollisionShape2D" parent="."]
 texture_filter = 2
-position = Vector2(-64, 64)
-scale = Vector2(4.58, 5.8311)
+position = Vector2(-33.3333, 27.7778)
+scale = Vector2(3.91333, 4.60888)
 shape = SubResource("CircleShape2D_3eadt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -27,14 +160,27 @@ position_smoothing_speed = 10.0
 
 [node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(0, -8, 280, -56, 280, 80, 0, 8)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(191.667, 19.4444)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_j31ep")
 
 [node name="reloadTimer" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
 
 [node name="attackTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(186, 0)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_q605b")
+animation = &"blast"
+frame = 6
+frame_progress = 1.0
+flip_h = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="reloadTimer" to="." method="_on_reload_timer_timeout"]
+[connection signal="timeout" from="attackTimer" to="." method="_on_attack_timer_timeout"]
